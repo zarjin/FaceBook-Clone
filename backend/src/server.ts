@@ -5,6 +5,8 @@ import 'dotenv/config';
 
 import dbConnect from './configs/db.config';
 
+import AuthRoutes from './routes/auth.routes';
+
 const app = express();
 
 dbConnect();
@@ -22,6 +24,8 @@ app.use(
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
+
+app.use('/api/auth', AuthRoutes);
 
 const PORT = process.env.PORT;
 

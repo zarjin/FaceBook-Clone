@@ -5,7 +5,7 @@ const isAuthorized = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+): Promise<any> => {
   const token = req.cookies.token;
   if (!token) {
     return res.status(401).json({ message: 'Unauthorized' });

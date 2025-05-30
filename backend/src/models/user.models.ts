@@ -10,6 +10,7 @@ export interface IUser extends Document {
   location: string;
   work: string;
   education: string;
+  yourPosts: string[];
 }
 
 const UserSchema = new Schema<IUser>({
@@ -22,6 +23,7 @@ const UserSchema = new Schema<IUser>({
   location: { type: String },
   work: { type: String },
   education: { type: String },
+  yourPosts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
 });
 
 const userModels = mongoose.model<IUser>('User', UserSchema);
