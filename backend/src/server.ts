@@ -7,6 +7,7 @@ import dbConnect from './configs/db.config';
 
 import AuthRoutes from './routes/auth.routes';
 import UserRoutes from './routes/user.routes';
+import PostRoutes from './routes/post.routes';
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', AuthRoutes);
 app.use('/api/user', UserRoutes);
+app.use('/api/post', PostRoutes);
 
 const PORT = process.env.PORT;
 
